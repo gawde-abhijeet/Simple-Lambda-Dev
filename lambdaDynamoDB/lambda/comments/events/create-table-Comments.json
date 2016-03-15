@@ -1,0 +1,19 @@
+﻿{
+  "TableName": "comments",
+  "KeySchema": [
+    {
+      "AttributeName": "pageId",
+      "KeyType": "HASH"
+    }
+  ],
+  "AttributeDefinitions": [
+    {
+      "AttributeName": "pageId",
+      "AttributeType": "S"
+    }
+  ],
+  "ProvisionedThroughput": {
+    "ReadCapacityUnits": 1,
+    "WriteCapacityUnits": 1
+  }
+}

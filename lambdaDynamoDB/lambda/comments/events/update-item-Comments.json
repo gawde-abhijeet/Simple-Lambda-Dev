@@ -1,0 +1,11 @@
+﻿{
+  "TableName": "comments",
+  "Key": {
+    "pageId": { "S": "page00003" }
+  },
+  "UpdateExpression": "set userPosted = :u, message = :m",
+  "ExpressionAttributeValues": {
+    ":u": { "S": "user00001" },
+    ":m": { "S": "Updated message by user00001!" }
+  }
+} 

@@ -1,0 +1,8 @@
+﻿{
+  "TableName": "comments",
+  "Item": {
+    "pageId": { "S": "page00003" },
+    "userPosted": { "S": "user00003" },
+    "message": { "S": "message goes here..."}
+  }
+} 

@@ -1,0 +1,6 @@
+﻿{
+  "TableName": "comments",
+  "Key": {
+    "pageId": { "S": "page00002" }
+  }
+} 

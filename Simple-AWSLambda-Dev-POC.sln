@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "Microservices-Lambda", "..\POC_AWSLambdaDynamoDB\Microservices-Lambda\Microservices-Lambda.njsproj", "{B2CA74F2-893D-42F1-B985-9D0136A55BA7}"
+EndProject
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "Apex-Deploy", "..\POC_AWSLambdaDynamoDB\Apex-Deploy\Apex-Deploy.njsproj", "{11D01923-7996-4F59-8144-2ACEDCB89821}"
+EndProject
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "lambdaDynamoDB", "lambdaDynamoDB\lambdaDynamoDB.njsproj", "{93A99353-34B5-47FA-87C9-63D274E18909}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B2CA74F2-893D-42F1-B985-9D0136A55BA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2CA74F2-893D-42F1-B985-9D0136A55BA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2CA74F2-893D-42F1-B985-9D0136A55BA7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B2CA74F2-893D-42F1-B985-9D0136A55BA7}.Debug|x86.Build.0 = Debug|Any CPU
+		{B2CA74F2-893D-42F1-B985-9D0136A55BA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2CA74F2-893D-42F1-B985-9D0136A55BA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2CA74F2-893D-42F1-B985-9D0136A55BA7}.Release|x86.ActiveCfg = Release|Any CPU
+		{B2CA74F2-893D-42F1-B985-9D0136A55BA7}.Release|x86.Build.0 = Release|Any CPU
+		{11D01923-7996-4F59-8144-2ACEDCB89821}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11D01923-7996-4F59-8144-2ACEDCB89821}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11D01923-7996-4F59-8144-2ACEDCB89821}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{11D01923-7996-4F59-8144-2ACEDCB89821}.Debug|x86.Build.0 = Debug|Any CPU
+		{11D01923-7996-4F59-8144-2ACEDCB89821}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11D01923-7996-4F59-8144-2ACEDCB89821}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11D01923-7996-4F59-8144-2ACEDCB89821}.Release|x86.ActiveCfg = Release|Any CPU
+		{11D01923-7996-4F59-8144-2ACEDCB89821}.Release|x86.Build.0 = Release|Any CPU
+		{93A99353-34B5-47FA-87C9-63D274E18909}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93A99353-34B5-47FA-87C9-63D274E18909}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93A99353-34B5-47FA-87C9-63D274E18909}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{93A99353-34B5-47FA-87C9-63D274E18909}.Debug|x86.Build.0 = Debug|Any CPU
+		{93A99353-34B5-47FA-87C9-63D274E18909}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93A99353-34B5-47FA-87C9-63D274E18909}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93A99353-34B5-47FA-87C9-63D274E18909}.Release|x86.ActiveCfg = Release|Any CPU
+		{93A99353-34B5-47FA-87C9-63D274E18909}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
