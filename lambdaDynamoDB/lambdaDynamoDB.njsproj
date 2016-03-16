@@ -49,7 +49,6 @@
     <Content Include="lambda\comments\events\list-all-items-Comments.json" />
     <Content Include="lambda\comments\events\read-by-id-Comments.json" />
     <Content Include="lambda\comments\events\update-item-Comments.json" />
-    <Content Include="_sampleEvent.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="lambda\" />
