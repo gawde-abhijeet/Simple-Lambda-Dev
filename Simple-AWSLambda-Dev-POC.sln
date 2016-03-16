@@ -9,6 +9,8 @@ Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "Apex-Deploy", "..\POC_AWSLa
 EndProject
 Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "lambdaDynamoDB", "lambdaDynamoDB\lambdaDynamoDB.njsproj", "{93A99353-34B5-47FA-87C9-63D274E18909}"
 EndProject
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "deploy-CloudiaJS", "deploy-CloudiaJS\deploy-CloudiaJS.njsproj", "{0D5B8DEC-1A15-4094-BE43-214EC2E8BBA3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +43,14 @@ Global
 		{93A99353-34B5-47FA-87C9-63D274E18909}.Release|Any CPU.Build.0 = Release|Any CPU
 		{93A99353-34B5-47FA-87C9-63D274E18909}.Release|x86.ActiveCfg = Release|Any CPU
 		{93A99353-34B5-47FA-87C9-63D274E18909}.Release|x86.Build.0 = Release|Any CPU
+		{0D5B8DEC-1A15-4094-BE43-214EC2E8BBA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D5B8DEC-1A15-4094-BE43-214EC2E8BBA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D5B8DEC-1A15-4094-BE43-214EC2E8BBA3}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{0D5B8DEC-1A15-4094-BE43-214EC2E8BBA3}.Debug|x86.Build.0 = Debug|Any CPU
+		{0D5B8DEC-1A15-4094-BE43-214EC2E8BBA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D5B8DEC-1A15-4094-BE43-214EC2E8BBA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D5B8DEC-1A15-4094-BE43-214EC2E8BBA3}.Release|x86.ActiveCfg = Release|Any CPU
+		{0D5B8DEC-1A15-4094-BE43-214EC2E8BBA3}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
