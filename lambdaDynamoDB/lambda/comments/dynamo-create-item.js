@@ -4,15 +4,9 @@ var AWS = require("aws-sdk");
 
 exports.handler = function (event, context) {
     
-    var dynamodb = new AWS.DynamoDB();
+    // Endpoint specified for working with the local DynamoDB
+    var dynamodb = new AWS.DynamoDB({ endpoint: new AWS.Endpoint('http://localhost:8003') });
     
-    //var params = {
-    //    "TableName": "comments",
-    //    "Item": {
-    //        "pageId": { "S": "page00001" }
-    //    }
-    //};
-
     dynamodb.putItem(event, function (err, data) {
         if (err) {
             console.log(err); // an error occurred

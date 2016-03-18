@@ -4,7 +4,7 @@ var AWS = require("aws-sdk");
 
 exports.handler = function (event, context) {
     
-    var dynamodb = new AWS.DynamoDB();
+    var dynamodb = new AWS.DynamoDB({ endpoint: new AWS.Endpoint('http://localhost:8003') });
     
     dynamodb.deleteItem(event, function (err, data) {
         if (err) {
