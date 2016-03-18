@@ -1,0 +1,11 @@
+{
+  "name": "lambdaDynamoDB",
+  "version": "1.0.0",
+  "description": "POC to showcase DynamoDB CRUD operations using Node JS",
+  "main": "_testdriver.js",
+  "author": "gawde_abhijeet@hotmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.2.41"
+  }
+}
