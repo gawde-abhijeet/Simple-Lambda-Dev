@@ -39,6 +39,7 @@
     <Compile Include="lambda\comments\dynamo-delete-item.js" />
     <Compile Include="lambda\comments\dynamo-list-items.js" />
     <Compile Include="lambda\comments\dynamo-read-item.js" />
+    <Compile Include="test\comments-unit-test.js" />
     <Compile Include="_testdriver.js" />
   </ItemGroup>
   <ItemGroup>
@@ -55,6 +56,7 @@
     <Folder Include="lambda\" />
     <Folder Include="lambda\comments\" />
     <Folder Include="lambda\comments\events\" />
+    <Folder Include="test\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsTools.targets" />
 </Project>
