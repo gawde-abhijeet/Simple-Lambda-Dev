@@ -1,5 +1,5 @@
 ﻿exports.invokeLambdaFunc = function invokeLambdaFunc(lambdafunc, eventjson) {
-
+    
     var fs = require('fs');
     var lambda = require(lambdafunc);
     
@@ -8,9 +8,9 @@
     
     var context = {};
     context.done = function () {
-        console.log("------- Microservice Lambda Function Complete -------");
-        console.log("Press CNTRL + C to exit...");
-    }
+        console.log('------- Microservice Lambda Function Complete -------');
+        console.log('Press CNTRL + C to exit...');
+    };
     
     lambda.handler(event, context);
-}
+};

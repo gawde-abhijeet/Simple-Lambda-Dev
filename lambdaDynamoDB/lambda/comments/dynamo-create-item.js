@@ -1,6 +1,6 @@
 ﻿console.log('Loading Microservice Create Item...');
 
-var AWS = require("aws-sdk");
+var AWS = require('aws-sdk');
 
 exports.handler = function (event, context) {
     

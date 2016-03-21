@@ -4,7 +4,7 @@
   "description": "POC to showcase DynamoDB CRUD operations using Node JS",
   "main": "_testdriver.js",
   "scripts": {
-    "test" : "mocha -u bdd -R spec -t 5000"
+    "test": "mocha -u bdd -R spec -t 5000"
   },
   "author": "gawde_abhijeet@hotmail.com",
   "license": "ISC",
@@ -12,6 +12,16 @@
     "aws-sdk": "^2.2.41"
   },
   "devDependencies": {
-    "mocha": "^2.4.5"
+    "gulp": "^3.9.1",
+    "gulp-if": "^2.0.0",
+    "gulp-jscs": "^3.0.2",
+    "gulp-jshint": "^2.0.0",
+    "gulp-load-plugins": "^1.2.0",
+    "gulp-print": "^2.0.1",
+    "gulp-util": "^3.0.7",
+    "jshint": "^2.9.1",
+    "jshint-stylish": "^2.1.0",
+    "mocha": "^2.4.5",
+    "yargs": "^4.3.2"
   }
 }

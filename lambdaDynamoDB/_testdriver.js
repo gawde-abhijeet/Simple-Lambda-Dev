@@ -11,11 +11,11 @@
 
 // No explicit Environment Variables for Access Keys
 // Already provisioned the ~/.aws/credentials & ~/.aws/config
-process.env['AWS_REGION'] = 'us-west-2'
+process.env['AWS_REGION'] = 'us-west-2';
 
 // root folders for comments lambda functions & events json
-var lambda_func_comments = './lambda/comments/';
-var event_json_comments = './lambda/comments/events/';
+var lambdaFuncComments = './lambda/comments/';
+var eventJsonComments = './lambda/comments/events/';
 
 var app = require('./app');
 
@@ -32,7 +32,7 @@ var app = require('./app');
 //app.invokeLambdaFunc(lambda_func_comments + 'dynamo-read-item', event_json_comments + 'read-by-id-Comments.json');
 
 // Invoke update item by id for comments dynamoDB table
-app.invokeLambdaFunc(lambda_func_comments + 'dynamo-update-item', event_json_comments + 'update-item-Comments.json');
+app.invokeLambdaFunc(lambdaFuncComments + 'dynamo-update-item', eventJsonComments + 'update-item-Comments.json');
 
 // Invoke delete item by id for comments dynamoDB table
 //app.invokeLambdaFunc(lambda_func_comments + 'dynamo-delete-item', event_json_comments + 'delete-item-Comments.json');
