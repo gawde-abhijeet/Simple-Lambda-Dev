@@ -35,18 +35,22 @@
   <ItemGroup>
     <Compile Include="app.js" />
     <Compile Include="gulpfile.js" />
+    <Compile Include="karma.conf.js" />
     <Compile Include="lambda\comments\dynamo-create-table.js" />
     <Compile Include="lambda\comments\dynamo-create-item.js" />
     <Compile Include="lambda\comments\dynamo-delete-item.js" />
     <Compile Include="lambda\comments\dynamo-list-items.js" />
     <Compile Include="lambda\comments\dynamo-read-item.js" />
     <Compile Include="test\comments-unit-test.js" />
+    <Compile Include="test\failing-unit-test.js" />
+    <Compile Include="test\helpers\test-helpers-comments.js" />
     <Compile Include="_testdriver.js" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="lambda\comments\dynamo-update-item.js" />
     <Content Include=".jscsrc" />
     <Content Include=".jshintrc" />
+    <Content Include="gulp.config.js" />
     <Content Include="lambda\comments\events\create-item-Comments.json" />
     <Content Include="lambda\comments\events\create-table-Comments.json" />
     <Content Include="lambda\comments\events\delete-item-Comments.json" />
@@ -60,6 +64,8 @@
     <Folder Include="lambda\comments\" />
     <Folder Include="lambda\comments\events\" />
     <Folder Include="test\" />
+    <Folder Include="test\helpers\" />
+    <Folder Include="test\server-integration\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsTools.targets" />
 </Project>

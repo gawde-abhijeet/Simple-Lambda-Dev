@@ -1,4 +1,5 @@
-﻿/*
+﻿/*jshint -W101 */
+/*
  * This is a utility file to help invoke and debug the lambda function. It is not included as part of the
  * bundle upload to Lambda.
  * 
