@@ -6,14 +6,13 @@ exports.handler = function (event, context) {
     
     var dynamodb = new AWS.DynamoDB({ endpoint: new AWS.Endpoint('http://localhost:8003') });
         
-
-    dynamodb.scan(event, function (err, data) {
+    return dynamodb.scan(event, function (err, data) {
         if (err) {
             console.log(err); // an error occurred
-            context.fail(new Error('failed'));
+            context.done(new Error('failed'), null);
         } else if (data) {
-            console.log(data);
-            context.done(data, 'Succeeded');  // SUCCESS with message
+            console.log('data: ' + JSON.stringify(data));
+            context.done(null, data);  // SUCCESS with results
         }
     });
 };

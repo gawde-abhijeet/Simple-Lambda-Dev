@@ -19,21 +19,28 @@ var lambdaFuncComments = './lambda/comments/';
 var eventJsonComments = './lambda/comments/events/';
 
 var app = require('./app');
+var testHelpers = require('./test-helpers');
+var testHelpersConfig = require('./test-helpers-config')();
+
 
 // Invoke create comments dynamoDB table
-//app.invokeLambdaFunc(lambda_func_comments + 'dynamo-create-table', event_json_comments + 'create-table-Comments.json');
+//console.log(testHelpers.invokeLambdaFunc(testHelpersConfig.lambdaCommentsCreateTable, testHelpersConfig.eventCommentsCreateTable));
 
 // Invoke create new item for comments dynamoDB table
-//app.invokeLambdaFunc(lambda_func_comments + 'dynamo-create-item', event_json_comments + 'create-item-Comments.json');
+//console.log('------- Creating New Item -------');
+//console.log('Result:' + testHelpers.invokeLambdaFunc(testHelpersConfig.lambdaCommentsCreateItem, testHelpersConfig.eventCommentsCreateItem));
 
 // Invoke read all items for comments dynamoDB table
-//app.invokeLambdaFunc(lambda_func_comments + 'dynamo-list-items', event_json_comments + 'list-all-items-Comments.json');
+console.log('------- Listing All Item -------');
+console.log(testHelpers.invokeLambdaFunc(testHelpersConfig.lambdaCommentsListAllItem, testHelpersConfig.eventCommentsListAllItem));
 
 // Invoke read item by id for comments dynamoDB table
-//app.invokeLambdaFunc(lambda_func_comments + 'dynamo-read-item', event_json_comments + 'read-by-id-Comments.json');
+//console.log('------- Read Item by Id -------');
+//console.log(testHelpers.invokeLambdaFunc(testHelpersConfig.lambdaCommentsReadItem, testHelpersConfig.eventCommentsReadItem));
 
 // Invoke update item by id for comments dynamoDB table
-app.invokeLambdaFunc(lambdaFuncComments + 'dynamo-update-item', eventJsonComments + 'update-item-Comments.json');
+//console.log(testHelpers.invokeLambdaFunc(testHelpersConfig.lambdaCommentsUpdateItem, testHelpersConfig.eventCommentsUpdateItem));
 
 // Invoke delete item by id for comments dynamoDB table
-//app.invokeLambdaFunc(lambda_func_comments + 'dynamo-delete-item', event_json_comments + 'delete-item-Comments.json');
+//console.log('------- Delete Item -------');
+//console.log(testHelpers.invokeLambdaFunc(testHelpersConfig.lambdaCommentsDeleteItem, testHelpersConfig.eventCommentsDeleteItem));

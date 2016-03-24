@@ -1,37 +1,40 @@
 ﻿(function () {
     'use strict';
     var expect = require('chai').expect;
-    var testHelpers = require('./helpers/test-helpers-comments')();
-    var lambdaComments = require(testHelpers.lambdaCommentsCreateItem);
+    var testHelpers = require('../test-helpers');
+    var testHelpersConfig = require('../test-helpers-config')();
     
-    var context = require('aws-lambda-mock-context');
-    var ctx = context();
+    describe("Unit Testing: Lambda func for doing CRUD operation for dynamoDB table 'comments'", function () {
+        describe("Operation: Create New Item", function () {
+            var result = null;
 
-    describe("Unit Testing: Lambda func for doing CRUD operation for dynamoDB table: comments", function () {
-        describe("Create New Item", function () {
-            var cresponse = null;
-            var cerror = null;
+            beforeEach(function (done) {
+                process.env['AWS_REGION'] = 'us-west-2';
 
-            before(function (done) {
-                lambdaComments.handler({
-                    "TableName": "comments",
-                    "Item": {
-                        "pageId": { "S": "page00005" },
-                        "userPosted": { "S": "user00003" },
-                        "message": { "S": "message goes here..." }
-                    }
-                }, ctx);
-
-                // Captures the response and/or errors
-                ctx.Promise
-                    .then(function (resp) { done(); })
-                    .catch(function (err) { cerror = err; done(); })
-
+                result = testHelpers.invokeLambdaFunc(testHelpersConfig.lambdaCommentsCreateItem, testHelpersConfig.eventCommentsCreateItem);
+                done();
             });
             
-            it("not errored out!", function () {
-                expect(cerror).to.be.null;
+            it("--> was able to successfully create new item", function (done) {
+                expect(result).to.not.be.an('undefined');
+                done();
             });
         });
+
+        //describe("Operation: Read Item by Id", function () {
+        //    var result = null;
+            
+        //    beforeEach(function (done) {
+        //        process.env['AWS_REGION'] = 'us-west-2';
+                
+        //        //result = testHelpers.invokeLambdaFunc(testHelpersConfig.lambdaCommentsReadItem, testHelpersConfig.eventCommentsReadItem);
+        //        done();
+        //    });
+            
+        //    it("--> was able to successfully read item by Id", function (done) {
+        //        //expect(result).to.be.an('undefined');
+        //        done();
+        //    });
+        //});
     });
 })();
