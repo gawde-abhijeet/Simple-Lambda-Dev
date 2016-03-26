@@ -33,7 +33,6 @@
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="app.js" />
     <Compile Include="gulpfile.js" />
     <Compile Include="karma.conf.js" />
     <Compile Include="lambda\comments\dynamo-create-table.js" />
@@ -41,11 +40,9 @@
     <Compile Include="lambda\comments\dynamo-delete-item.js" />
     <Compile Include="lambda\comments\dynamo-list-items.js" />
     <Compile Include="lambda\comments\dynamo-read-item.js" />
-    <Compile Include="lambda\greetings\hello-world.js" />
-    <Compile Include="test-helpers.js" />
+    <Compile Include="testHelper.js" />
     <Compile Include="test\comments-unit-test.js" />
     <Compile Include="test-backlog\failing-unit-test.js" />
-    <Compile Include="test-helpers-config.js" />
     <Compile Include="_testdriver.js" />
   </ItemGroup>
   <ItemGroup>
@@ -65,7 +62,6 @@
     <Folder Include="lambda\" />
     <Folder Include="lambda\comments\" />
     <Folder Include="lambda\comments\events\" />
-    <Folder Include="lambda\greetings\" />
     <Folder Include="test-backlog\" />
     <Folder Include="test\" />
     <Folder Include="test\server-integration\" />

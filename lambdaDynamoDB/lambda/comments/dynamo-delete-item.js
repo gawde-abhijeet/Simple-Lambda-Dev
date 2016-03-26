@@ -12,7 +12,7 @@ exports.handler = function (event, context) {
             context.done(new Error('failed'));
         } else if (data) {
             console.log(data);
-            context.done(null, 'Succeeded');  // SUCCESS with message
+            context.done(null, 'success');  // SUCCESS with message
         }
     });
 };

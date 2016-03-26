@@ -1,5 +1,4 @@
-﻿console.log('Loading Microservice Create Item...');
-
+﻿
 var AWS = require('aws-sdk');
 
 exports.handler = function (event, context) {
@@ -12,8 +11,8 @@ exports.handler = function (event, context) {
             console.log(err); // an error occurred
             context.done(new Error('failed'));
         } else if (data) {
-            console.log(data);
-            context.done(null, 'Succeeded');  // SUCCESS with message
+            console.log('\r\n------- Called from lambda func ------- \r\ndata: ' + JSON.stringify(data));
+            context.succeed('success');  // SUCCESS with message
         }
     });
 };

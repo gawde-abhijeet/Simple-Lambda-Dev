@@ -18,29 +18,32 @@ process.env['AWS_REGION'] = 'us-west-2';
 var lambdaFuncComments = './lambda/comments/';
 var eventJsonComments = './lambda/comments/events/';
 
-var app = require('./app');
-var testHelpers = require('./test-helpers');
-var testHelpersConfig = require('./test-helpers-config')();
-
+var testHelper = require('./testHelper');
 
 // Invoke create comments dynamoDB table
-//console.log(testHelpers.invokeLambdaFunc(testHelpersConfig.lambdaCommentsCreateTable, testHelpersConfig.eventCommentsCreateTable));
+//console.log('------- Create Table named: comments (testdriver) -------');
+//testHelper.invokeDynamoCreateTableComments();
 
 // Invoke create new item for comments dynamoDB table
 //console.log('------- Creating New Item -------');
-//console.log('Result:' + testHelpers.invokeLambdaFunc(testHelpersConfig.lambdaCommentsCreateItem, testHelpersConfig.eventCommentsCreateItem));
+//testHelper.invokeDynamoCreateItem();
 
 // Invoke read all items for comments dynamoDB table
-console.log('------- Listing All Item -------');
-console.log(testHelpers.invokeLambdaFunc(testHelpersConfig.lambdaCommentsListAllItem, testHelpersConfig.eventCommentsListAllItem));
+//console.log('------- Listing All Item (testdriver) -------');
+//testHelper.invokeDynamoListItems();
 
 // Invoke read item by id for comments dynamoDB table
 //console.log('------- Read Item by Id -------');
-//console.log(testHelpers.invokeLambdaFunc(testHelpersConfig.lambdaCommentsReadItem, testHelpersConfig.eventCommentsReadItem));
+//testHelper.invokeDynamoReadItemById();
 
 // Invoke update item by id for comments dynamoDB table
-//console.log(testHelpers.invokeLambdaFunc(testHelpersConfig.lambdaCommentsUpdateItem, testHelpersConfig.eventCommentsUpdateItem));
+//console.log('------- Update Item -------');
+//testHelper.invokeDynamoUpdateItem();
 
 // Invoke delete item by id for comments dynamoDB table
-//console.log('------- Delete Item -------');
-//console.log(testHelpers.invokeLambdaFunc(testHelpersConfig.lambdaCommentsDeleteItem, testHelpersConfig.eventCommentsDeleteItem));
+console.log('------- Delete Item -------');
+testHelper.invokeDynamoDeleteItem();
+
+testHelper.context.Promise
+    .then(resp => { console.log('\r\n------- Called from testdriver ------- \r\nresp: ' + JSON.stringify(resp)); done(); })
+    .catch(err => { done(); })
