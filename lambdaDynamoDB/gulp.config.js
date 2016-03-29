@@ -6,15 +6,15 @@
          * File Paths
          */
 
-        alljs: ['/lambda/**/*.js'],
+        alljs: ['./lambda/**/*.js'],
 
         /**
          * Karma & Testing Settings
          */
         report: ['./report/'],
         serverIntegrationSpecs: ['./test/server-integration/**/*-unit-test.js'],
-        unitTestHelpers: ['./test/helpers/*.js'],
-        unitTestSpecs: ['./test/*-unit-test.js']
+        unitTestHelpers: './testHelper.js',
+        unitTestSpecs: './test/*-unit-test.js'
     };
 
     config.karma = getKarmaOptions();
@@ -26,7 +26,7 @@
     function getKarmaOptions() {
         var options = {
             files: [].concat(
-                '/lambda/**/*.js',
+                './lambda/**/*.js', 
                 config.unitTestHelpers,
                 config.unitTestSpecs
             ),
@@ -40,10 +40,10 @@
                   { type: 'text' }
                 ]
             },
-            preprocessors: { '**/!(*-unit-test)+(.js)': 'coverage' }
+            preprocessors: {} //{ '**/!(*-unit-test)+(.js)': 'coverage' }
         };
 
-        //options.preprocessors['**/lambda/**/*.js'] = ['coverage'];
+        options.preprocessors['./lambda/**/*.js'] = ['coverage'];
 
         return options;
     }

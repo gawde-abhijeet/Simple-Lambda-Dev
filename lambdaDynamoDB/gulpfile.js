@@ -21,20 +21,17 @@ gulp.task('test', ['vet'], function (done) {
 
 //// Reusable Functions
 
+// Initiates the Karma Server for running automated unit tests
 function startTests(singleRun, done) {
-    var Server = require('karma').Server;
+    var karmaServer = require('karma').Server;
     var excludeFiles = [];
     var serverSpecs = config.serverIntegrationSpecs; 
     
     excludeFiles = [].concat(
-        config.serverIntegrationSpecs,
-        config.unitTestHelpers
+        config.serverIntegrationSpecs
     );    
 
-    /**
-     *  Deprecated since 0.13
-     *
-    karma.start({
+    karmaServer.start({
         configFile: __dirname + '/karma.conf.js',
         exclude: excludeFiles,
         singleRun: !!singleRun
@@ -50,19 +47,9 @@ function startTests(singleRun, done) {
             done();
         }
     }
-     */
-
-    /**
-     * Using newer version of starting the karma test runner
-     */
-    
-    new Server({
-        configFile: __dirname + '/karma.conf.js',
-        exclude: excludeFiles,
-        singleRun: !!singleRun
-    }, done).start(); 
 }
 
+// Gulp log messsages colored in blue
 function logMessage(msg) {
     if (typeof (msg) === 'object') {
         for (var item in msg) {
