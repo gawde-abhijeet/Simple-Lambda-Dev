@@ -40,9 +40,12 @@
     <Compile Include="lambda\comments\dynamo-delete-item.js" />
     <Compile Include="lambda\comments\dynamo-list-items.js" />
     <Compile Include="lambda\comments\dynamo-read-item.js" />
+    <Compile Include="lambda\common\fake-s3-server.js" />
     <Compile Include="testHelper.js" />
-    <Compile Include="test\comments-unit-test.js" />
     <Compile Include="test-backlog\failing-unit-test.js" />
+    <Compile Include="test\comments-unit-test.js" />
+    <Compile Include="test\local-s3-unit-test.js" />
+    <Compile Include="test\sample-unit-test.js" />
     <Compile Include="_testdriver.js" />
   </ItemGroup>
   <ItemGroup>
@@ -57,11 +60,15 @@
     <Content Include="lambda\comments\events\read-by-id-Comments.json" />
     <Content Include="lambda\comments\events\update-item-Comments.json" />
     <Content Include="package.json" />
+    <Content Include="test\resources\image.jpg" />
+    <Content Include="test\resources\jquery.js.gz" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="lambda\" />
     <Folder Include="lambda\comments\" />
     <Folder Include="lambda\comments\events\" />
+    <Folder Include="lambda\common\" />
+    <Folder Include="test\resources\" />
     <Folder Include="test-backlog\" />
     <Folder Include="test\" />
     <Folder Include="test\server-integration\" />

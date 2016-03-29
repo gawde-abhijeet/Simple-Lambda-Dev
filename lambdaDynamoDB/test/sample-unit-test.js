@@ -1,10 +1,9 @@
 ﻿(function () {
     'use strict';
-    //var expect = require('chai').expect;
-    //var sinon = require('sinon');
-    //var expect = chai.expect;
+    var expect = require('chai').expect;
+    var sinon = require('sinon');
     
-    describe('bootstrap', function () {
+    describe('unit test bootstrap', function () {
         it('chai should works', function () {
             expect('a').to.equal('a');
         });
