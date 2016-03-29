@@ -9,7 +9,7 @@ var util = require('util');
 var path = require('path');
 var md5 = require('md5');
 
-describe('S3rver Unit Tests (Fake S3)', function () {
+describe('Unit Testing: S3rver (Fake S3)', function () {
     var s3Client;
     var buckets = ['bucket1', 'bucket2', 'bucket3', 'bucket4', 'bucket5', 'bucket6'];
     var s3rver;
@@ -65,7 +65,7 @@ describe('S3rver Unit Tests (Fake S3)', function () {
         s3rver.close(done);
     });
     
-    describe('Supported Methods for Bucket', function () {
+    describe('Supported Operations for Bucket', function () {
         it('should fetch already provisioned six buckets', function (done) {
             s3Client.listBuckets(function (err, buckets) {
                 if (err) {
@@ -100,7 +100,7 @@ describe('S3rver Unit Tests (Fake S3)', function () {
         
     });    
     
-    describe('Supported Methods for Objects', function () {
+    describe('Supported Operations for Objects', function () {
         it('should store an image in a bucket: bucket7', function (done) {
             var file = path.join(__dirname, 'resources/image.jpg');
             fs.readFile(file, function (err, data) {

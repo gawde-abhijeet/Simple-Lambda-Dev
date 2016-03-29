@@ -1,4 +1,4 @@
-﻿console.log('Loading Microservice Create Table...');
+﻿//console.log('Loading Microservice Create Table...');
 
 var AWS = require('aws-sdk');
 
@@ -8,10 +8,10 @@ exports.handler = function (event, context) {
     
     return dynamodb.createTable(event, function (err, data) {
         if (err) {
-            console.log(err); // an error occurred
+            //console.log(err); // an error occurred
             context.done(new Error('failed'));
         } else if (data) {
-            console.log(data);
+            //console.log(data);
             context.done(null, 'Succeeded');  // SUCCESS with message
         }
     });

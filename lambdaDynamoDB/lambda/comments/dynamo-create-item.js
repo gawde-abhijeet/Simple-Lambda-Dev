@@ -8,10 +8,10 @@ exports.handler = function (event, context) {
     
     return dynamodb.putItem(event, function (err, data) {
         if (err) {
-            console.log(err); // an error occurred
+            //console.log(err); // an error occurred
             context.done(new Error('failed'));
         } else if (data) {
-            console.log('\r\n------- Called from lambda func ------- \r\ndata: ' + JSON.stringify(data));
+            //console.log('\r\n------- Called from lambda func ------- \r\ndata: ' + JSON.stringify(data));
             context.succeed('success');  // SUCCESS with message
         }
     });

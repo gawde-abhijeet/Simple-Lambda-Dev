@@ -40,7 +40,7 @@
     <Compile Include="lambda\comments\dynamo-delete-item.js" />
     <Compile Include="lambda\comments\dynamo-list-items.js" />
     <Compile Include="lambda\comments\dynamo-read-item.js" />
-    <Compile Include="lambda\common\fake-s3-server.js" />
+    <Compile Include="common\fake-s3-server.js" />
     <Compile Include="testHelper.js" />
     <Compile Include="test-backlog\failing-unit-test.js" />
     <Compile Include="test\comments-unit-test.js" />
@@ -67,7 +67,7 @@
     <Folder Include="lambda\" />
     <Folder Include="lambda\comments\" />
     <Folder Include="lambda\comments\events\" />
-    <Folder Include="lambda\common\" />
+    <Folder Include="common\" />
     <Folder Include="test\resources\" />
     <Folder Include="test-backlog\" />
     <Folder Include="test\" />
