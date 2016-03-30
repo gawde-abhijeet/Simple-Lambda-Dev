@@ -1,7 +1,12 @@
 ﻿var gulp = require('gulp');
+var mocha = require('gulp-mocha');
 var args = require('yargs').argv;
 var config = require('./gulp.config')();
-var $ = require('gulp-load-plugins')({lazy: true});
+var $ = require('gulp-load-plugins')({ lazy: true });
+var del = require('del');
+var runSequence = require('run-sequence');
+var tape = require('gulp-tape');
+var tapColorize = require('tap-colorize');
 
 gulp.task('vet', function () {
     logMessage('Analyzing source with JSHint & JSCS');
@@ -18,6 +23,38 @@ gulp.task('vet', function () {
 gulp.task('test', ['vet'], function (done) {
     startTests(true /* single run */, done);
 });
+
+gulp.task('clean', function () {
+    return del(['publish']);
+});
+
+gulp.task('js', function () {
+    return gulp.src('lambda/**/*.js')
+        .pipe(gulp.dest('publish/'));
+
+});
+
+gulp.task('default', function (callback) {
+    return runSequence(
+        ['clean'],
+        ['js'],
+        callback
+    );
+});
+
+gulp.task('tape-test', function () {
+    return gulp.src('tape-tests/*.js')
+    .pipe(tape({
+        reporter: tapColorize()
+    }));
+});
+
+gulp.task('mocha-test', function () {
+    return gulp.src('./test/comments-unit-test.js', { read: false })
+		// gulp-mocha needs filepaths so you can't have any plugins before it 
+		.pipe(mocha({ reporter: 'nyan' }));
+});
+
 
 //// Reusable Functions
 

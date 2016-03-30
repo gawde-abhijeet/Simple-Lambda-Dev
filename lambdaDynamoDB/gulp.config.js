@@ -26,9 +26,10 @@
     function getKarmaOptions() {
         var options = {
             files: [].concat(
-                './lambda/**/*.js', 
+                //'./lambda/**/*.js', 
                 config.unitTestHelpers,
-                config.unitTestSpecs
+                //config.unitTestSpecs
+                './test/sample-unit-test.js'
             ),
             excludes: [],
             coverage: {
@@ -43,7 +44,8 @@
             preprocessors: {} //{ '**/!(*-unit-test)+(.js)': 'coverage' }
         };
 
-        options.preprocessors['./lambda/**/*.js'] = ['coverage'];
+        //options.preprocessors['./lambda/**/*.js'] = ['coverage'];
+        options.preprocessors['./test/sample-unit-test.js', './testHelper.js']= ['browserify'];
 
         return options;
     }

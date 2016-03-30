@@ -9,7 +9,7 @@
         
         // frameworks to use
         // some available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-        frameworks: ['mocha', 'chai', 'sinon', 'chai-sinon'],
+        frameworks: ['browserify', 'mocha', 'chai', 'sinon', 'chai-sinon'],
         
         // list of files / patterns to load in the browser
         files: gulpConfig.karma.files,
@@ -56,6 +56,15 @@
         
         // Continuous Integration mode
         // if true, Karma captures browsers, runs the tests and exits
-        singleRun: true
+        singleRun: true,
+
+        // browserify configuration 
+        browserify: {
+            debug: true, 
+            transform: ['brfs'],
+            extensions: ['.js']
+        }
+
+
     });
 };
