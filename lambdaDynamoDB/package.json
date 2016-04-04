@@ -21,6 +21,7 @@
   },
   "devDependencies": {
     "aws-lambda-mock-context": "^2.0.0",
+    "bluebird": "^3.3.4",
     "brfs": "^1.0.2",
     "debowerify": "^1.4.1",
     "del": "^2.2.0",

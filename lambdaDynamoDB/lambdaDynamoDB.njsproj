@@ -40,12 +40,16 @@
     <Compile Include="lambda\comments\dynamo-delete-item.js" />
     <Compile Include="lambda\comments\dynamo-list-items.js" />
     <Compile Include="lambda\comments\dynamo-read-item.js" />
-    <Compile Include="common\fake-s3-server.js" />
+    <Compile Include="lambda\comments\Comments.js" />
+    <Compile Include="lambda\common\dynamoDBHelper.js" />
+    <Compile Include="lambda\common\fake-s3-server.js" />
+    <Compile Include="lambda\common\lambdaHelper.js" />
     <Compile Include="test-backlog\s3-invoke-dynamo.js" />
     <Compile Include="tape-tests\simple-equality-with-a-plan.js" />
     <Compile Include="testHelper.js" />
     <Compile Include="test-backlog\failing-unit-test.js" />
     <Compile Include="test\comments-unit-test.js" />
+    <Compile Include="test\dynamoDBHelper-unit-test.js" />
     <Compile Include="test\local-s3-unit-test.js" />
     <Compile Include="test\sample-unit-test.js" />
     <Compile Include="tape-tests\simple-timing-async.js" />
@@ -70,7 +74,7 @@
     <Folder Include="lambda\" />
     <Folder Include="lambda\comments\" />
     <Folder Include="lambda\comments\events\" />
-    <Folder Include="common\" />
+    <Folder Include="lambda\common\" />
     <Folder Include="tape-tests\" />
     <Folder Include="publish\" />
     <Folder Include="test\resources\" />

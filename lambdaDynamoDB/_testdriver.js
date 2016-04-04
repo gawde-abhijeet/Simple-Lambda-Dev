@@ -10,40 +10,95 @@
  * 
  */
 
-// No explicit Environment Variables for Access Keys
-// Already provisioned the ~/.aws/credentials & ~/.aws/config
-process.env['AWS_REGION'] = 'us-west-2';
+(function () { 
+    // No explicit Environment Variables for Access Keys
+    // Already provisioned the ~/.aws/credentials & ~/.aws/config
+    process.env['AWS_REGION'] = 'us-west-2';
+    process.env['STAGE'] = 'dev';
+    
+    // Running Common - dynamoDBHelper
+    //testCommon_dynamoDBHelper();
+    
+    // Running the Comments Lambda Func
+    testCommentsLambdaFunc();
 
-// root folders for comments lambda functions & events json
-var lambdaFuncComments = './lambda/comments/';
-var eventJsonComments = './lambda/comments/events/';
+    // Running lambdaHelper
+    //testCommon_lambdaHelper();
 
-var testHelper = require('./testHelper');
+})();    
 
-// Invoke create comments dynamoDB table
-//console.log('------- Create Table named: comments (testdriver) -------');
-//testHelper.invokeDynamoCreateTableComments();
+function testCommentsLambdaFunc() {
+    // root folders for comments lambda functions & events json
+    var lambdaFuncComments = './lambda/comments/';
+    var eventJsonComments = './lambda/comments/events/';
 
-// Invoke create new item for comments dynamoDB table
-//console.log('------- Creating New Item -------');
-//testHelper.invokeDynamoCreateItem();
+    var testHelper = require('./testHelper');
 
-// Invoke read all items for comments dynamoDB table
-//console.log('------- Listing All Item (testdriver) -------');
-//testHelper.invokeDynamoListItems();
+    // Invoke create comments dynamoDB table
+    //console.log('------- Create Table named: comments (testdriver) -------');
+    //testHelper.invokeDynamoCreateTableComments();
 
-// Invoke read item by id for comments dynamoDB table
-//console.log('------- Read Item by Id -------');
-//testHelper.invokeDynamoReadItemById();
+    // Invoke create new item for comments dynamoDB table
+    //console.log('------- Creating New Item -------');
+    //testHelper.invokeDynamoCreateItem();
 
-// Invoke update item by id for comments dynamoDB table
-//console.log('------- Update Item -------');
-//testHelper.invokeDynamoUpdateItem();
+    // Invoke read all items for comments dynamoDB table
+    console.log('------- Listing All Item (testdriver) -------');
+    testHelper.invokeDynamoListItems();
 
-// Invoke delete item by id for comments dynamoDB table
-console.log('------- Delete Item -------');
-testHelper.invokeDynamoDeleteItem();
+    // Invoke read item by id for comments dynamoDB table
+    //console.log('------- Read Item by Id -------');
+    //testHelper.invokeDynamoReadItemById();
 
-testHelper.context.Promise
-    .then(resp => { console.log('\r\n------- Called from testdriver ------- \r\nresp: ' + JSON.stringify(resp)); done(); })
-    .catch(err => { done(); })
+    // Invoke update item by id for comments dynamoDB table
+    //console.log('------- Update Item -------');
+    //testHelper.invokeDynamoUpdateItem();
+
+    // Invoke delete item by id for comments dynamoDB table
+    //console.log('------- Delete Item -------');
+    //testHelper.invokeDynamoDeleteItem();
+
+    testHelper.context.Promise
+        .then(resp => { console.log('\r\n------- Called from testdriver ------- \r\nresp: ' + JSON.stringify(resp)); done(); })
+        .catch(err => { done(); })
+}
+
+function testCommon_dynamoDBHelper() {
+    var Promise = require('bluebird');
+    var dynamoDBHelper = require('./lambda/common/dynamoDBHelper')();
+
+    var payload = {
+        'TableName': 'comments',
+        'Item': {
+            'pageId': { 'S': 'page00102' },
+            'userPosted': { 'S': 'user00102' },
+            'message': { 'S': 'message goes here...' }
+        }
+    };
+    
+    var results = null;
+
+    var promise = new Promise(function (callback) {
+        results = dynamoDBHelper.create(payload, callback);
+    });
+}
+
+function testCommon_lambdaHelper() {
+    var Promise = require('bluebird');
+    var lambdaHelper = require('./lambda/common/lambdaHelper');
+    
+    var payload = {
+        'TableName': 'comments',
+        'Item': {
+            'pageId': { 'S': 'page00103' },
+            'userPosted': { 'S': 'user00103' },
+            'message': { 'S': 'message goes here...' }
+        }
+    };
+    
+    var results = null;
+    
+    var promise = new Promise(function (callback) {
+        results = lambdaHelper.invoke('../comments/dynamo-create-item', payload);
+    });
+}
