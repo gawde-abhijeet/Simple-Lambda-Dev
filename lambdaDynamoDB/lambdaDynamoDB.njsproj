@@ -44,6 +44,7 @@
     <Compile Include="lambda\common\dynamoDBHelper.js" />
     <Compile Include="lambda\common\fake-s3-server.js" />
     <Compile Include="lambda\common\lambdaHelper.js" />
+    <Compile Include="lib\userProfile.js" />
     <Compile Include="test-backlog\s3-invoke-dynamo.js" />
     <Compile Include="tape-tests\simple-equality-with-a-plan.js" />
     <Compile Include="testHelper.js" />
@@ -75,6 +76,7 @@
     <Folder Include="lambda\comments\" />
     <Folder Include="lambda\comments\events\" />
     <Folder Include="lambda\common\" />
+    <Folder Include="lib\" />
     <Folder Include="tape-tests\" />
     <Folder Include="publish\" />
     <Folder Include="test\resources\" />

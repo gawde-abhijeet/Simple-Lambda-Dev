@@ -20,12 +20,21 @@
     //testCommon_dynamoDBHelper();
     
     // Running the Comments Lambda Func
-    testCommentsLambdaFunc();
+    //testCommentsLambdaFunc();
 
     // Running lambdaHelper
     //testCommon_lambdaHelper();
 
+    // Running userProfile test
+    test_getUserProfile();
+
 })();    
+
+function test_getUserProfile(){
+    var userProfile = require('./lib/userProfile');
+
+    userProfile.getProfilePicture();
+}
 
 function testCommentsLambdaFunc() {
     // root folders for comments lambda functions & events json

@@ -32,6 +32,7 @@
   <ItemGroup>
     <Compile Include="lambda-users\api-lambda.js" />
     <Compile Include="lambda-users\dynamo-users.js" />
+    <Compile Include="lambda-users\userProfile.js" />
     <Content Include="lambda-users\package.json" />
     <Content Include="lambda-users\policies\access-dynamodb.json" />
     <Content Include="README.md" />

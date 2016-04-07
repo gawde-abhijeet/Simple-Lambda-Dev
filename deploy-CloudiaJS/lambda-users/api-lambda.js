@@ -6,7 +6,8 @@ var api = new ApiBuilder(),
     Promise = require('bluebird'),
     AWS = require('aws-sdk'),
     DOC = require("dynamodb-doc"),
-    dynamo = require('./dynamo-users');
+    dynamo = require('./dynamo-users'),
+    userProfile = require('./userProfile');
 
 // get all users
 api.get('/users', function (request) {
@@ -23,5 +24,15 @@ api.get('/users/{id}', function (request) {
     return dynamo.getUserById(request.pathParams.id, request.env.tableName);
 
 });
+
+// get user profile picture
+api.get('/userProfilePicture', function (request) {
+    'use strict';
+    
+    //return userProfile.getProfilePicture();
+    return dynamo.getUserProfilePicture();
+
+});
+
 
 module.exports = api;

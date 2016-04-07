@@ -1,5 +1,5 @@
 {
-  "name": "claudia-deploy-users",
+  "name": "claudia-deply-users",
   "version": "1.0.0",
   "description": "",
   "main": "api-lambda.js",
@@ -7,7 +7,7 @@
     "*.js"
   ],
   "scripts": {
-    "create": "claudia create --name claudiaDeployUsers --region us-west-2 --api-module api-lambda --policies policies",
+    "create": "claudia create --name claudiaDeplyUsers --region us-west-2 --api-module api-lambda --policies policies",
     "deploy": "claudia update",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,6 +17,7 @@
     "aws-sdk": "^2.2.41",
     "bluebird": "^3.3.3",
     "claudia-api-builder": "^1.0.2",
-    "dynamodb-doc": "^1.0.0"
+    "dynamodb-doc": "^1.0.0",
+    "httpntlm": "^1.5.3"
   }
 }
