@@ -14,19 +14,20 @@
     // No explicit Environment Variables for Access Keys
     // Already provisioned the ~/.aws/credentials & ~/.aws/config
     process.env['AWS_REGION'] = 'us-west-2';
-    process.env['STAGE'] = 'dev';
+    process.env['STAGE'] = 'local';
     
     // Running Common - dynamoDBHelper
-    //testCommon_dynamoDBHelper();
+    //testCommon_dynamoDBHelper_create();
+    //testCommon_dynamoDBHelper_scan();
     
     // Running the Comments Lambda Func
     //testCommentsLambdaFunc();
 
     // Running lambdaHelper
-    //testCommon_lambdaHelper();
+    testCommon_lambdaHelper();
 
     // Running userProfile test
-    test_getUserProfile();
+    //test_getUserProfile();
 
 })();    
 
@@ -67,12 +68,12 @@ function testCommentsLambdaFunc() {
     //console.log('------- Delete Item -------');
     //testHelper.invokeDynamoDeleteItem();
 
-    testHelper.context.Promise
-        .then(resp => { console.log('\r\n------- Called from testdriver ------- \r\nresp: ' + JSON.stringify(resp)); done(); })
-        .catch(err => { done(); })
+    //testHelper.context.Promise
+    //    .then(resp => { console.log('\r\n------- Called from testdriver ------- \r\nresp: ' + JSON.stringify(resp)); done(); })
+    //    .catch(err => { done(); })
 }
 
-function testCommon_dynamoDBHelper() {
+function testCommon_dynamoDBHelper_create() {
     var Promise = require('bluebird');
     var dynamoDBHelper = require('./lambda/common/dynamoDBHelper')();
 
@@ -92,6 +93,21 @@ function testCommon_dynamoDBHelper() {
     });
 }
 
+function testCommon_dynamoDBHelper_scan() {
+    var Promise = require('bluebird');
+    var dynamoDBHelper = require('./lambda/common/dynamoDBHelper')();
+    
+    var payload = {
+        'TableName': 'comments'
+    };
+    
+    var results = null;
+    
+    var promise = new Promise(function (callback) {
+        results = dynamoDBHelper.scan(payload, callback);
+    });
+}
+
 function testCommon_lambdaHelper() {
     var Promise = require('bluebird');
     var lambdaHelper = require('./lambda/common/lambdaHelper');
@@ -99,8 +115,8 @@ function testCommon_lambdaHelper() {
     var payload = {
         'TableName': 'comments',
         'Item': {
-            'pageId': { 'S': 'page00103' },
-            'userPosted': { 'S': 'user00103' },
+            'pageId': { 'S': 'page00104' },
+            'userPosted': { 'S': 'user00104' },
             'message': { 'S': 'message goes here...' }
         }
     };
@@ -110,4 +126,6 @@ function testCommon_lambdaHelper() {
     var promise = new Promise(function (callback) {
         results = lambdaHelper.invoke('../comments/dynamo-create-item', payload);
     });
+
+    console.log('successfully created new item')
 }

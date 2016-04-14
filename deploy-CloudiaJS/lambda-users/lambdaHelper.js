@@ -8,17 +8,16 @@ module.exports = {
             return new TypeError('Lambda function name is not provided.');
         }
         
-//if (process.env['STAGE'] === 'local') {
         if (payload.isDev && payload.isDev === "true") {
             var lambdaFunc = require(funcName);
             var context = require('aws-lambda-mock-context')();
-
+            
             lambdaFunc.handler(payload, context);
         }
-        else {
+        else {             
             var params = {
                 'FunctionName': funcName,
-                'Payload': JSON.stringify(payload)
+                'Payload': JSON.stringify(payload,null,2)
             };
             
             lambda.invoke(params, function (err, data) {

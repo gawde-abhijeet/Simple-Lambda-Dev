@@ -1,5 +1,5 @@
 {
-  "name": "claudia-deply-users",
+  "name": "claudia-deploy-users2",
   "version": "1.0.0",
   "description": "",
   "main": "api-lambda.js",
@@ -7,7 +7,7 @@
     "*.js"
   ],
   "scripts": {
-    "create": "claudia create --name claudiaDeplyUsers --region us-west-2 --api-module api-lambda --policies policies",
+    "create": "claudia create --name claudiaDeployUsers2 --region us-west-2 --api-module api-lambda --policies policies",
     "deploy": "claudia update",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
